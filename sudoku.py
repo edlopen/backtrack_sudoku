@@ -1,4 +1,3 @@
-import gui
 import pygame
 import time
 import sys
@@ -17,7 +16,8 @@ SAMPLE_BOARD = [
     [1,2,0,0,0,7,4,0,0],
     [0,4,9,2,0,6,0,0,7]
 ]
-
+pygame.init()
+pygame.font.init()
 BLACK = pygame.Color('black')
 WHITE = pygame.Color('white')
 FONT = pygame.font.SysFont('Arial', 30)
@@ -28,8 +28,7 @@ class Sudoku:
     def __init__(self, board=SAMPLE_BOARD):
         self.board = board
         # TODO: init pygame
-        pygame.init()
-        pygame.font.init()
+
         WINDOW_WIDTH, WINDOW_HEIGHT  = (540, 540)
         self.screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
         self.clock = pygame.time.Clock()
